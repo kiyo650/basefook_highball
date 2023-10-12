@@ -35,3 +35,12 @@
     display: flex;
     justify-content: space-between;
 }
+.box1{
+    width:500px;
+    height:500px;
+    position:fixed;
+    top:100px;
+    right:0px;
+    background-color:blue;
+    color:white;
+  }
