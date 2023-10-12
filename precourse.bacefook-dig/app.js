@@ -16,16 +16,22 @@ window.addEventListener("load", () => {
   const loginNameEl = document.getElementById("loginName");
   loginNameEl.innerText = loginName
   const toPostBacefook = () => {
-  for (let index = startIndex; index < latestIndex; index++) {
+    for (let index = startIndex; index < latestIndex; index++) {
     const post = bacefook.newsfeed[index];
+    
+    const postEl = document.createElement("div");
+    postEl.className="frame1"
+    const postEl2 = document.createElement("div");
+    postEl2.className="frame2"
+    const postEl3 = document.createElement("div");
+    postEl3.className="frame3"
+
+    postEl2.innerText = post.text;
 
     const friendEl = document.createElement("div");
     friendEl.className = "friend";
     friendEl.innerText = post.friend;
 
-    const postEl = document.createElement("div");
-    postEl.innerText = post.text;
-    postEl.append(friendEl);
 
     //タイムスタンプ
     const timestampEl = document.createElement("div");
@@ -37,7 +43,8 @@ window.addEventListener("load", () => {
      :passedTimeSeconds < 60 * 60 * 24 ? "hours"
      :"days" 
     timestampEl.innerText = `posted ${nowDate.diff(post.timestamp, passedTimeUnit)} ${passedTimeUnit} ago`;
-    postEl.append(timestampEl)
+    timestampEl.className = "bottom";
+  
     
     //feeling
     const feelingEl = document.createElement("div");
@@ -54,12 +61,20 @@ window.addEventListener("load", () => {
     :  "";
     
     feelingEl.innerText = feelingSymbol;
-    postEl.append(feelingEl);
+    feelingEl.className="bottom";
+    postEl3.append(feelingEl);
     //image
     const imageEl = document.createElement("img");
-    imageEl.classList.add("pic")
+    imageEl.className="pic";
     imageEl.src = post.image;
+
+
+    postEl3.append(friendEl);
+    postEl3.append(timestampEl)
+    
+    postEl2.append(postEl3);
     postEl.append(imageEl);
+    postEl.append(postEl2);
     containerEl.append(postEl);
   }
 }
