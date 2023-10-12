@@ -15,6 +15,7 @@
 
 .frame1{
    display: flex;
+    justify-content: flex-end;
    flex-direction: row; 
    margin: 10px;
    border: 2px;
