@@ -11,12 +11,19 @@ window.addEventListener("load", () => {
 
   // This makes things appear
   const loginName = localStorage.getItem("username");
+
+  // const newTextEl = document.createElement("div");
+  let newText = document.getElementById("newText");
+  newText.value=loginName;
+
+
   let startIndex = 0;
   let latestIndex = bacefook.newsfeed.length;
   const loginNameEl = document.getElementById("loginName");
   loginNameEl.innerText = loginName
+
   const toPostBacefook = () => {
-    for (let index = startIndex; index < latestIndex; index++) {
+  for (let index = startIndex; index < latestIndex; index++) {
     const post = bacefook.newsfeed[index];
     
     const postEl = document.createElement("div");
@@ -43,7 +50,7 @@ window.addEventListener("load", () => {
      :passedTimeSeconds < 60 * 60 * 24 ? "hours"
      :"days" 
     timestampEl.innerText = `posted ${nowDate.diff(post.timestamp, passedTimeUnit)} ${passedTimeUnit} ago`;
-    timestampEl.className = "bottom";
+    // timestampEl.className = "bottom";
   
     
     //feeling
@@ -78,6 +85,8 @@ window.addEventListener("load", () => {
     containerEl.append(postEl);
   }
 }
+
+
 toPostBacefook();
 const btn = document.getElementById("update");
 btn.addEventListener("click", () => {
@@ -85,19 +94,32 @@ btn.addEventListener("click", () => {
   latestIndex = bacefook.newsfeed.length;
   toPostBacefook();
 })
+
 const newPostbtn = document.getElementById("newPost");
 newPostbtn.addEventListener("click", ()=>{
   let nameText = document.getElementById("uname");
 
+  const postEl = document.createElement("div");
+  postEl.className="frame1"
+  const postEl2 = document.createElement("div");
+  postEl2.className="frame2"
+  const postEl3 = document.createElement("div");
+  postEl3.className="frame3"
+
   const newNameEl = document.createElement("div");
   newNameEl.innerText = nameText.value;
-  containerEl.append(newNameEl)
-
+  
   const newTextEl = document.createElement("div");
   let newText = document.getElementById("newText");
-  //const postEl = document.createElement("div");
   newTextEl.innerText = newText.value;
-  containerEl.append(newTextEl)
-  
+
+  postEl3.append("🥴🍺");
+  postEl3.append(newNameEl);
+  postEl3.append("posted 0 seconds ago");
+  postEl2.append(newTextEl)
+  postEl2.append(postEl3);
+  postEl.append(postEl2);
+  containerEl.append(postEl);
+
 })
 });
