@@ -57,6 +57,7 @@ window.addEventListener("load", () => {
     postEl.append(feelingEl);
     //image
     const imageEl = document.createElement("img");
+    imageEl.classList.add("pic")
     imageEl.src = post.image;
     postEl.append(imageEl);
     containerEl.append(postEl);
@@ -69,5 +70,19 @@ btn.addEventListener("click", () => {
   latestIndex = bacefook.newsfeed.length;
   toPostBacefook();
 })
+const newPostbtn = document.getElementById("newPost");
+newPostbtn.addEventListener("click", ()=>{
+  let nameText = document.getElementById("uname");
 
+  const newNameEl = document.createElement("div");
+  newNameEl.innerText = nameText.value;
+  containerEl.append(newNameEl)
+
+  const newTextEl = document.createElement("div");
+  let newText = document.getElementById("newText");
+  //const postEl = document.createElement("div");
+  newTextEl.innerText = newText.value;
+  containerEl.append(newTextEl)
+  
+})
 });
