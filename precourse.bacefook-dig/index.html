@@ -13,21 +13,32 @@
     <link rel = "stylesheet" href="app.css">
   </head>
   <body>
-    <h1>Bacefook Newsfeed</h1>
-    <div>
-      <label for="uname">username:</label>
-      <input type="text" id="uname"/>
+    <div id="topVanner">
+     <h1 class="teamName">High Ball</h1>
+      <div>
+       <label for="uname">username:</label>
+       <input type="text" id="uname"/>
+      </div>
+      <div class="text">
+       <div>
+        <input type="text" id="newText"/>
+       </div>
+       <div>
+         <button id="newPost">🍻</button><br>
+       </div>
+      </div>
+      <div>
+        <button id = "update" type = "button">update</button>
+      </div>
     </div>
-    <div>
-      <label for="newText">text:</label>
-      <input type="text" id="newText"/>
-    </div>
-    <button id="newPost">post</button>
     <div id="loginName"></div>
-    <div id="newsfeed"></div>
-    <button id = "update" type = "button">update</button>
-      <div class="box1">
-    <img src = "images/10_13.jpg" alt = "ミスティネール" >
-  </div>
-  </body>
+    <div id="main">
+     <div id="newsfeed"></div>
+     <div class="box1">
+     <img src = "images/10_13.jpg" alt = "ミスティネール" ><br>
+     <label for="drunk" id="drunk">10月13日のお酒:ミスティネール<br>
+      酒言葉:人や動物の注目を集める自由な人<br>
+      その他の日は<a href="https://www.oiwai-item.com/alcohol">こちら</a></label>
+    </div>
+</body>
 </html>
