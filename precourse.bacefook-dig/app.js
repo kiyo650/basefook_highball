@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
 
   // const newTextEl = document.createElement("div");
   let newText = document.getElementById("newText");
-  newText.value=loginName;
+  newText.value = `${loginName}さん、今日のお酒を投稿しましょう`;
 
 
   let startIndex = 0;
@@ -94,7 +94,11 @@ btn.addEventListener("click", () => {
   latestIndex = bacefook.newsfeed.length;
   toPostBacefook();
 })
-
+  
+newText.addEventListener("focus", ()=>{
+  newText.value = "";
+})
+  
 const newPostbtn = document.getElementById("newPost");
 newPostbtn.addEventListener("click", ()=>{
   let nameText = document.getElementById("uname");
@@ -120,6 +124,7 @@ newPostbtn.addEventListener("click", ()=>{
   postEl2.append(postEl3);
   postEl.append(postEl2);
   containerEl.append(postEl);
+  newText.value = `${loginName}さん、今日のお酒を投稿しましょう`;
 
 })
 });
