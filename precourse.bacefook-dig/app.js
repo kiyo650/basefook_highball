@@ -14,13 +14,11 @@ window.addEventListener("load", () => {
 
   // const newTextEl = document.createElement("div");
   let newText = document.getElementById("newText");
-  newText.value = `${loginName}さん、今日のお酒を投稿しましょう`;
+  newText.value = `${loginName}さん、今日のお酒を投稿(カンパイ）しましょう😊🍺`;
 
 
   let startIndex = 0;
   let latestIndex = bacefook.newsfeed.length;
-  const loginNameEl = document.getElementById("loginName");
-  loginNameEl.innerText = loginName
 
   const toPostBacefook = () => {
   for (let index = startIndex; index < latestIndex; index++) {
@@ -50,9 +48,8 @@ window.addEventListener("load", () => {
      :passedTimeSeconds < 60 * 60 * 24 ? "hours"
      :"days" 
     timestampEl.innerText = `posted ${nowDate.diff(post.timestamp, passedTimeUnit)} ${passedTimeUnit} ago`;
-    // timestampEl.className = "bottom";
   
-    
+   
     //feeling
     const feelingEl = document.createElement("div");
     const feelingSymbol = 
@@ -68,8 +65,8 @@ window.addEventListener("load", () => {
     :  "";
     
     feelingEl.innerText = feelingSymbol;
-    feelingEl.className="bottom";
     postEl3.append(feelingEl);
+
     //image
     const imageEl = document.createElement("img");
     imageEl.className="pic";
@@ -110,15 +107,12 @@ newPostbtn.addEventListener("click", ()=>{
   const postEl3 = document.createElement("div");
   postEl3.className="frame3"
 
-  const newNameEl = document.createElement("div");
-  newNameEl.innerText = nameText.value;
-  
   const newTextEl = document.createElement("div");
   let newText = document.getElementById("newText");
   newTextEl.innerText = newText.value;
 
   postEl3.append("🥴🍺");
-  postEl3.append(newNameEl);
+  postEl3.append(loginName);
   postEl3.append("posted 0 seconds ago");
   postEl2.append(newTextEl)
   postEl2.append(postEl3);
@@ -128,3 +122,4 @@ newPostbtn.addEventListener("click", ()=>{
 
 })
 });
+
