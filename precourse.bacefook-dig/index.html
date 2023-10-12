@@ -6,6 +6,7 @@
     <meta name = "viewport" content = "width=device-width, initial=scale=1.0">
 
     <title>DIG Bacefook Newsfeed</title>
+
     <script src="moment.min.js"></script>
     <script src="dataGenerator.js"></script>
     <script src="app.js"></script>
@@ -13,6 +14,15 @@
   </head>
   <body>
     <h1>Bacefook Newsfeed</h1>
+    <div>
+      <label for="uname">username:</label>
+      <input type="text" id="uname"/>
+    </div>
+    <div>
+      <label for="newText">text:</label>
+      <input type="text" id="newText"/>
+    </div>
+    <button id="newPost">post</button>
     <div id="loginName"></div>
     <div id="newsfeed"></div>
     <button id = "update" type = "button">update</button>
