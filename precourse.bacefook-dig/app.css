@@ -8,3 +8,7 @@
     flex-direction: column-reverse;
 }
 
+.pic {
+    width: 100px;
+    height: 100px;
+}
