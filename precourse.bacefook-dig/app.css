@@ -46,6 +46,7 @@
 
 #newPost {
     height: 100px;
+    width: 50px;
     font-size: xx-large;
     
 }
@@ -83,4 +84,8 @@
     height: 100px;
     width: 400px;
     padding-block: 0px;
+}
+
+#update{
+    width: 450px;
 }
